@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'BarangController@index')->name('welcome');
 Route::get('/barang/{id}', 'BarangController@show')->name('barang.show');
+Route::get('/pesanan/{id}', 'PesananController@create')->name('pesanan.create');
+Route::post('/pesanan/{id}', 'PesananController@store')->name('pesanan.store');
 
 Auth::routes();
 
@@ -23,3 +25,6 @@ Route::get('/admin', 'AdminController@index')->name('admin');
 Route::get('/admin/user', 'Admin\UserController@index')->name('user');
 Route::resource('/admin/barang', 'Admin\BarangController');
 Route::resource('/admin/kategori', 'Admin\KategoriController');
+
+// Route Pesanan
+Route::get('/admin/pesanan', 'Admin\PesananController@index')->name('admin.pesanan');

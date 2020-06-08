@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Barang;
 use App\Pesanan;
+use App\User;
 
 class PesananController extends Controller
 {
@@ -57,4 +58,14 @@ class PesananController extends Controller
         return redirect('/')->with('success', 'Pesanan berhasil dibuat');
     }
 
+    public function history(){
+        $user_id = auth()->user()->id;
+        $user = User::findOrFail($user_id);
+        $pesanan = $user->pesanan;
+        return view('pages.riwayat')->with('pesanan', $pesanan);
+    }
+
+    public function bayar(){
+        
+    }
 }

@@ -38,6 +38,6 @@ class User extends Authenticatable
     ];
 
     public function pesanan(){
-        return $this->hasMany('App\Pesanan');
+        return $this->hasMany('App\Pesanan', 'id_user');
     }
 }

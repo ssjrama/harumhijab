@@ -43,7 +43,7 @@
                             </div>
                           </li>
                           <li class="nav-item">
-                              <a href="/keranjang" class="nav-link">Keranjang</a>
+                              <a href="/riwayat" class="nav-link">Riwayat Belanja</a>
                           </li>
                     </ul>
 

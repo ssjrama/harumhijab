@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'BarangController@index')->name('welcome');
+Route::get('/riwayat', 'PesananController@history')->name('history');
 Route::get('/barang/{id}', 'BarangController@show')->name('barang.show');
 Route::get('/pesanan/{id}', 'PesananController@create')->name('pesanan.create');
 Route::post('/pesanan/{id}', 'PesananController@store')->name('pesanan.store');

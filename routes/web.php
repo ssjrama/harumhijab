@@ -20,12 +20,13 @@ Route::post('/pesanan/{id}', 'PesananController@store')->name('pesanan.store');
 
 Auth::routes();
 
-Route::middleware('IsAdmin')->group(function () {
+Route::middleware('is_admin')->group(function () {
     Route::get('/admin', 'AdminController@index')->name('admin');
     Route::get('/admin/user', 'Admin\UserController@index')->name('user');
     Route::resource('/admin/barang', 'Admin\BarangController');
     Route::resource('/admin/kategori', 'Admin\KategoriController');
-});
 
-// Route Pesanan
-Route::get('/admin/pesanan', 'Admin\PesananController@index')->name('admin.pesanan');
+    // Route Pesanan
+    Route::get('/admin/pesanan', 'Admin\PesananController@index')->name('admin.pesanan');
+    Route::get('/admin/detail/{id}', 'Admin\PesananController@show')->name('admin.pesanan.show');
+});

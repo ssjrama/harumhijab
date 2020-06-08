@@ -9,8 +9,7 @@
                     <th>Jumlah</th>
                     <th>Barang</th>
                     <th>Pemesan</th>
-                    <th>Alamat</th>
-                    <th></th>
+                    <th>Status</th>
                     <th></th>
                 </tr>
             @foreach ($pesanan as $p)
@@ -19,14 +18,8 @@
                     <td>{{$p->jumlah}}</td>
                     <td>{{$p->barang->nama}}</td>
                     <td>{{$p->user->name}}</td>
-                    <td>{{$p->alamat}}</td>
-                    <td>
-                        <form action="/admin/pesanan/{{$p->id}}" method="post">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Hapus</button>
-                        </form>
-                    </td>
+                    <td class="bg-primary text-light text-center">Status</td>
+                    <td><a href="/admin/detail/{{$p->id}}" class="btn btn-primary">Detail</a></td>
                 </tr>
             @endforeach
            </table>        

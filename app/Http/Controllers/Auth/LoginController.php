@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -47,9 +48,9 @@ class LoginController extends Controller
             'password' => 'required'
         ]);
 
-        if(auth()->attempt(array('email' => $input['email'], 'password' => $input['password'])))
+        if(Auth::attempt(array('email' => $input['email'], 'password' => $input['password'])))
         {
-            if (auth()->user()->is_admin == 1) {
+            if (Auth::user()->is_admin == 1) {
                 return redirect()->route('admin');
             }else{
                 return redirect()->route('welcome');

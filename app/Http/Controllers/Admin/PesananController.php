@@ -12,4 +12,9 @@ class PesananController extends Controller
         $pesanan = Pesanan::paginate(10);
         return view('admin.pesanan.index')->with('pesanan', $pesanan);
     }
+
+    public function show($id){
+        $pesanan = Pesanan::findOrFail($id);
+        return view('admin.pesanan.show')->with('pesanan', $pesanan);
+    }
 }

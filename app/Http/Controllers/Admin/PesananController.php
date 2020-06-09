@@ -17,4 +17,12 @@ class PesananController extends Controller
         $pesanan = Pesanan::findOrFail($id);
         return view('admin.pesanan.show')->with('pesanan', $pesanan);
     }
+
+    public function update_status(Request $request, $id){
+        $pesanan = Pesanan::findOrFail($id);
+        $pesanan->status = $request->input('status');
+        $pesanan->save();
+        return redirect()->back()->with('success', 'Pesanan berhasil diubah');
+
+    }
 }

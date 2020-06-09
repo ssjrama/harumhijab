@@ -18,7 +18,13 @@
                     <td>{{$p->jumlah}}</td>
                     <td>{{$p->barang->nama}}</td>
                     <td>{{$p->user->name}}</td>
-                    <td class="bg-primary text-light text-center">Status</td>
+                    <td>
+                        @if ($p->status != null)
+                            {{$p->status}}                            
+                        @else
+                            Belum Dicek
+                        @endif
+                    </td>
                     <td><a href="/admin/detail/{{$p->id}}" class="btn btn-primary">Detail</a></td>
                 </tr>
             @endforeach

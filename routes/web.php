@@ -18,6 +18,8 @@ Route::get('/riwayat', 'PesananController@history')->name('history');
 Route::get('/barang/{id}', 'BarangController@show')->name('barang.show');
 Route::get('/pesanan/{id}', 'PesananController@create')->name('pesanan.create');
 Route::post('/pesanan/{id}', 'PesananController@store')->name('pesanan.store');
+Route::get('/bayar/{id}', 'PesananController@create_bayar')->name('pesanan.bayar');
+Route::post('/bayar/{id}', 'PesananController@bayar')->name('pesanan.bukti_bayar');
 
 Auth::routes();
 
@@ -30,4 +32,6 @@ Route::middleware('is_admin')->group(function () {
     // Route Pesanan
     Route::get('/admin/pesanan', 'Admin\PesananController@index')->name('admin.pesanan');
     Route::get('/admin/detail/{id}', 'Admin\PesananController@show')->name('admin.pesanan.show');
+    Route::post('/pesanan/status/{id}', 'Admin\PesananController@update_status')->name('pesanan.status');
+
 });

@@ -65,7 +65,15 @@ class PesananController extends Controller
         return view('pages.riwayat')->with('pesanan', $pesanan);
     }
 
-    public function bayar(){
-        
+    public function create_bayar($id){
+        $pesanan = Pesanan::findOrFail($id);
+        return view('pages.bayar')->with('pesanan', $pesanan);
+    }
+
+    public function bayar(Request $request, $id){
+        $pesanan = Pesanan::findOrFail($id);
+        $pesanan->bukti_bayar = $request->input('bukti_bayar');
+        $pesanan->save();
+        return redirect('/')->with('success', 'Pesanan berhasil dibuat');
     }
 }

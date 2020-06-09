@@ -4,7 +4,7 @@
         @foreach ($pesanan as $p)
             {{$p}}
             <br>
-            <a href="" class="btn btn-primary">Bayar</a>
+            <a href="/bayar/{{$p->id}}" class="btn btn-primary">Bayar</a>
             <br>
         @endforeach
     </div>

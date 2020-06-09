@@ -84,6 +84,7 @@
         </nav>
 
         <main class="py-4">
+            @include('inc.pesan')
             @yield('content')
         </main>
     </div>

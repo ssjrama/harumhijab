@@ -37,6 +37,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    protected $attributes = [
+        'is_admin' => 0
+    ];
+
     public function pesanan(){
         return $this->hasMany('App\Pesanan', 'id_user');
     }

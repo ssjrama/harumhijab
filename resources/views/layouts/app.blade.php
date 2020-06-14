@@ -38,9 +38,7 @@
                               Kategori
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            @foreach ($kategori as $k)
-                                <a class="dropdown-item" href="#">{{$k->kategori}}</a>  
-                            @endforeach
+                                @yield('kategori')
                             </div>
                           </li>
                           <li class="nav-item">

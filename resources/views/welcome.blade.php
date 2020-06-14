@@ -1,4 +1,9 @@
 @extends('layouts.app')
+@section('kategori')
+    @foreach ($kategori as $k)
+        <a class="dropdown-item" href="#">{{$k->kategori}}</a>  
+    @endforeach
+@endsection
 @section('content')
     <div class="container">
         <div class="row">

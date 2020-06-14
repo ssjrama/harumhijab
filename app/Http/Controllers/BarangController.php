@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Barang;
+use App\Kategori;
 
 class BarangController extends Controller
 {
@@ -15,7 +16,11 @@ class BarangController extends Controller
     public function index()
     {
         $barang = Barang::paginate(20);
-        return view('welcome')->with('barang', $barang);
+        $kategori = Kategori::all();
+        return view('welcome',[
+            'barang' => $barang,
+            'kategori' => $kategori
+        ]);
     }
 
      /**

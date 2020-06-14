@@ -38,8 +38,9 @@
                               Kategori
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                              <a class="dropdown-item" href="#">Hijab</a>
-                              <a class="dropdown-item" href="#">Jilbab</a>
+                            @foreach ($kategori as $k)
+                                <a class="dropdown-item" href="#">{{$k->kategori}}</a>  
+                            @endforeach
                             </div>
                           </li>
                           <li class="nav-item">

@@ -33,6 +33,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
+<<<<<<< HEAD
 
                     </ul>
 
@@ -40,6 +41,16 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         
+=======
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Kategori
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                @yield('kategori')
+                            </div>
+                          </li>
+>>>>>>> 0db773edec8f6a0d5c8a84544b8f153e543c9173
                           <li class="nav-item">
                               <a href="/riwayat" class="nav-link">Riwayat Belanja</a>
                           </li>

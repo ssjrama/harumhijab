@@ -76,4 +76,10 @@ class PesananController extends Controller
         $pesanan->save();
         return redirect('/')->with('success', 'Pesanan berhasil dibuat');
     }
+
+    public function delete($id){
+        $pesanan = Pesanan::findOrFail($id);
+        $pesanan->delete();
+        return redirect('/riwayat')->with('success', 'Pesanan berhasil dihapus');
+    }
 }

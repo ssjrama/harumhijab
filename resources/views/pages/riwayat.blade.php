@@ -15,6 +15,7 @@
                           <th>Status</th>
 	                        <th>Total Bayar</th>
 	                        <th></th>
+	                        <th></th>
                        	</tr>
                        </thead>
 	                    <tbody>
@@ -32,7 +33,14 @@
                                 @endif
                               </td>
 	                            <td>{{$p->jumlah * $p->barang->harga}}</td>
-	                            <td><a href="/bayar/{{$p->id}}" class="primary-btn chechout-btn">Bayar</a></td>
+                              <td><a href="/bayar/{{$p->id}}" class="primary-btn chechout-btn">Bayar</a></td>
+                              <td>
+                                <form action="/bayar/{{$p->id}}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="primary-btn chechout-btn">Hapus</button>
+                                </form>
+                            </td>
 	                        </tr>
 	                        @endforeach
 	                    </tbody>

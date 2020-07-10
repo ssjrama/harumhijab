@@ -20,6 +20,7 @@ Route::get('/pesanan/{id}', 'PesananController@create')->name('pesanan.create');
 Route::post('/pesanan/{id}', 'PesananController@store')->name('pesanan.store');
 Route::get('/bayar/{id}', 'PesananController@create_bayar')->name('pesanan.bayar');
 Route::post('/bayar/{id}', 'PesananController@bayar')->name('pesanan.bukti_bayar');
+Route::delete('/bayar/{id}', 'PesananController@delete')->name('pesanan.delete');
 
 Auth::routes();
 

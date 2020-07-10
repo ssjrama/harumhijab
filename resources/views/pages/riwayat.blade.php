@@ -12,6 +12,7 @@
 	                    	<th>Jumlah</th>
 	                      	<th>Harga</th>
 	                        <th>Alamat</th>
+                          <th>Status</th>
 	                        <th>Total Bayar</th>
 	                        <th></th>
                        	</tr>
@@ -23,6 +24,13 @@
 	                            <td>{{$p->jumlah}}</td>
 	                            <td>{{$p->barang->harga}}</td>
 	                            <td>{{$p->alamat}}</td>
+                              <td>
+                                @if($p->status == "" )
+                                  Belum Dicek
+                                  @else
+                                  {{$p->status}}
+                                @endif
+                              </td>
 	                            <td>{{$p->jumlah * $p->barang->harga}}</td>
 	                            <td><a href="/bayar/{{$p->id}}" class="primary-btn chechout-btn">Bayar</a></td>
 	                        </tr>

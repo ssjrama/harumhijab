@@ -20,7 +20,8 @@
                     <td>{{$b->harga}}</td>
                     <td>{{$b->stok}}</td>
                     <td>{{$b->kategori->kategori}}</td>
-                    <td><img class="img-fluid h-25" src="/storage/images/{{$b->image}}" alt="image"></td>
+                    {{-- "/storage/images/{{$b->image}}" --}}
+                    <td><img class="img-fluid h-25" src={{ asset("storage/images/$b->image")}} alt="image"></td>
                     <td><a href="/admin/barang/{{$b->id}}/edit" class="btn btn-success">Edit</a></td>
                     <td>
                         <form action="/admin/barang/{{$b->id}}" method="post">
